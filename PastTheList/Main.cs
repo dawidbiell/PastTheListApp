@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PastTheListLibrary;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,19 +13,23 @@ namespace PastTheList
 {
     public partial class Main : Form
     {
+        private ListProcessor list = new ListProcessor();
+
         public Main()
         {
             InitializeComponent();
+            timer1.Start();
+            SetParameters();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void SetParameters()
         {
-
+            throw new NotImplementedException();
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
-
+            preview.Text ="";
         }
     }
 }
