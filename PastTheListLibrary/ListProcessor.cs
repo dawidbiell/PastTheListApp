@@ -9,6 +9,7 @@ namespace PastTheListLibrary
 {
     public class ListProcessor
     {
+        public string Separator { get; set; }
         public string ListPrefix { get; set; }
         public string ListSufix { get; set; }
 
@@ -16,23 +17,45 @@ namespace PastTheListLibrary
         public string ItemSufix { get; set; }
 
         public bool InNewLine { get; set; }
-
-        public List<string> Items { get; set; } = new List<string>();
-
-        StringBuilder _sb = new StringBuilder();
-        private string ClibboarText{get { return Clipboard.GetText(); }
-        }
-
-        private string List()
+        private string NewLine
         {
-            string output = "";
-
-            return output;
+            get { return InNewLine ? Environment.NewLine : String.Empty; }
         }
 
-        public string ClibboarText
+        public int ItemsCount { get { return GetItems().Length; } }
+
+
+        private string[] GetItems()
         {
-            get { return Clipboard.GetText(); }
+            string[] items;
+            string cbText;
+            char[] cbDelimeters;
+
+            cbText = Clipboard.GetText();
+            cbDelimeters = new char[] { '\r', '\n', '\t' };
+            items = cbText.Split(cbDelimeters, StringSplitOptions.RemoveEmptyEntries);
+
+            return items;
         }
+
+        public string GetList()
+        {
+            StringBuilder sb = new StringBuilder();
+            string[] items = GetItems();
+            //items.Where(x => !String.IsNullOrEmpty(x)).ToArray();
+
+            sb.Append(ListPrefix);
+            sb.Append(ItemPrefix);
+
+            sb.Append(String.Join(ItemSufix + Separator+ NewLine + ItemPrefix, items));
+
+            sb.Append(ItemSufix);
+            sb.Append(ListSufix);
+
+
+            return sb.ToString();
+        }
+
+
     }
 }
