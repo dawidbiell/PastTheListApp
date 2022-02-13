@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.separator_tbx = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.inNewLine = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -44,8 +46,6 @@
             this.preview = new System.Windows.Forms.RichTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +53,7 @@
             // groupBox1
             // 
             this.groupBox1.AutoSize = true;
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.separator_tbx);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.inNewLine);
             this.groupBox1.Controls.Add(this.label5);
@@ -74,6 +74,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Settings";
             // 
+            // separator_tbx
+            // 
+            this.separator_tbx.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.separator_tbx.Location = new System.Drawing.Point(81, 32);
+            this.separator_tbx.Name = "separator_tbx";
+            this.separator_tbx.Size = new System.Drawing.Size(141, 25);
+            this.separator_tbx.TabIndex = 0;
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(6, 34);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(69, 20);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Separator";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // inNewLine
             // 
             this.inNewLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -81,7 +99,7 @@
             this.inNewLine.Location = new System.Drawing.Point(6, 141);
             this.inNewLine.Name = "inNewLine";
             this.inNewLine.Size = new System.Drawing.Size(216, 46);
-            this.inNewLine.TabIndex = 10;
+            this.inNewLine.TabIndex = 50;
             this.inNewLine.Text = "Each item in new line";
             this.inNewLine.UseVisualStyleBackColor = true;
             // 
@@ -131,7 +149,7 @@
             this.listSufix_tbx.Location = new System.Drawing.Point(182, 84);
             this.listSufix_tbx.Name = "listSufix_tbx";
             this.listSufix_tbx.Size = new System.Drawing.Size(40, 25);
-            this.listSufix_tbx.TabIndex = 5;
+            this.listSufix_tbx.TabIndex = 40;
             // 
             // itemPrefix_tbx
             // 
@@ -139,7 +157,7 @@
             this.itemPrefix_tbx.Location = new System.Drawing.Point(52, 84);
             this.itemPrefix_tbx.Name = "itemPrefix_tbx";
             this.itemPrefix_tbx.Size = new System.Drawing.Size(40, 25);
-            this.itemPrefix_tbx.TabIndex = 4;
+            this.itemPrefix_tbx.TabIndex = 20;
             // 
             // itemSufix_tbx
             // 
@@ -147,7 +165,7 @@
             this.itemSufix_tbx.Location = new System.Drawing.Point(136, 84);
             this.itemSufix_tbx.Name = "itemSufix_tbx";
             this.itemSufix_tbx.Size = new System.Drawing.Size(40, 25);
-            this.itemSufix_tbx.TabIndex = 3;
+            this.itemSufix_tbx.TabIndex = 30;
             // 
             // listPrefix_tbx
             // 
@@ -155,7 +173,7 @@
             this.listPrefix_tbx.Location = new System.Drawing.Point(6, 84);
             this.listPrefix_tbx.Name = "listPrefix_tbx";
             this.listPrefix_tbx.Size = new System.Drawing.Size(40, 25);
-            this.listPrefix_tbx.TabIndex = 2;
+            this.listPrefix_tbx.TabIndex = 10;
             // 
             // label2
             // 
@@ -203,24 +221,6 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(6, 34);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(69, 20);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Separator";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(81, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(141, 25);
-            this.textBox1.TabIndex = 12;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -255,7 +255,7 @@
         private RichTextBox preview;
         private GroupBox groupBox2;
         private System.Windows.Forms.Timer timer1;
-        private TextBox textBox1;
+        private TextBox separator_tbx;
         private Label label7;
     }
 }

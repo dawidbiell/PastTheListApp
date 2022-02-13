@@ -19,17 +19,23 @@ namespace PastTheList
         {
             InitializeComponent();
             timer1.Start();
-            SetParameters();
+            
         }
 
         private void SetParameters()
         {
-            throw new NotImplementedException();
+            list.Separator = this.separator_tbx.Text;
+            list.ListPrefix = this.listPrefix_tbx.Text;
+            list.ListSufix = this.listSufix_tbx.Text;
+            list.ItemPrefix = this.itemPrefix_tbx.Text;
+            list.ItemSufix = this.itemSufix_tbx.Text;
+            list.InNewLine = this.inNewLine.Checked;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            preview.Text ="";
+            SetParameters();
+            preview.Text =list.GetList();
         }
     }
 }
