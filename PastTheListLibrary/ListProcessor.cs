@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,23 +8,29 @@ using System.Windows.Forms;
 
 namespace PastTheListLibrary
 {
-    public class ListProcessor
+    public class ListProcessor:INotifyPropertyChanged
     {
         public string Separator { get; set; }
         public string ListPrefix { get; set; }
         public string ListSufix { get; set; }
-
         public string ItemPrefix { get; set; }
         public string ItemSufix { get; set; }
-
         public bool InNewLine { get; set; }
-        private string NewLine
+        
+        public int ItemsCount
         {
-            get { return InNewLine ? Environment.NewLine : String.Empty; }
+            get { return this.GetItems().Length; }
+        }
+        public string Preview
+        {
+            get { return this.GetList(); }
         }
 
-        public int ItemsCount { get { return GetItems().Length; } }
 
+        private string ListNewLine()
+        {
+            return InNewLine ? Environment.NewLine : String.Empty; 
+        }
 
         private string[] GetItems()
         {
@@ -47,7 +54,7 @@ namespace PastTheListLibrary
             sb.Append(ListPrefix);
             sb.Append(ItemPrefix);
 
-            sb.Append(String.Join(ItemSufix + Separator+ NewLine + ItemPrefix, items));
+            sb.Append(String.Join(ItemSufix + Separator + ListNewLine() + ItemPrefix, items));
 
             sb.Append(ItemSufix);
             sb.Append(ListSufix);
@@ -56,6 +63,12 @@ namespace PastTheListLibrary
             return sb.ToString();
         }
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        //protected void OnPropertyChanged(string propertyName)
+        //{
+        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        //}
 
     }
 }
