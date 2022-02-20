@@ -216,11 +216,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Preview";
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);

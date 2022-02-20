@@ -13,29 +13,30 @@ namespace PastTheList
 {
     public partial class Main : Form
     {
-        private ListProcessor list = new ListProcessor();
+        private ListProcessor _list = new ListProcessor();
 
         public Main()
         {
             InitializeComponent();
-            timer1.Start();
+
+            BindControls();
             
         }
 
-        private void SetParameters()
+        private void BindControls()
         {
-            list.Separator = this.separator_tbx.Text;
-            list.ListPrefix = this.listPrefix_tbx.Text;
-            list.ListSufix = this.listSufix_tbx.Text;
-            list.ItemPrefix = this.itemPrefix_tbx.Text;
-            list.ItemSufix = this.itemSufix_tbx.Text;
-            list.InNewLine = this.inNewLine.Checked;
+            separator_tbx.DataBindings.Add("Text", _list, nameof(_list.Separator), true, DataSourceUpdateMode.OnPropertyChanged);
+            listPrefix_tbx.DataBindings.Add("Text", _list, nameof(_list.ListPrefix), true, DataSourceUpdateMode.OnPropertyChanged);
+            itemPrefix_tbx.DataBindings.Add("Text", _list, nameof(_list.ItemPrefix), true, DataSourceUpdateMode.OnPropertyChanged);
+            itemSufix_tbx.DataBindings.Add("Text", _list, nameof(_list.ItemSufix), true, DataSourceUpdateMode.OnPropertyChanged);
+            listSufix_tbx.DataBindings.Add("Text", _list, nameof(_list.ListSufix), true, DataSourceUpdateMode.OnPropertyChanged);
+            inNewLine.DataBindings.Add("Checked", _list, nameof(_list.InNewLine), true, DataSourceUpdateMode.OnPropertyChanged);
+
+
+
+            preview.DataBindings.Add("Text", _list, nameof(_list.Preview), true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            SetParameters();
-            preview.Text =list.GetList();
-        }
+        
     }
 }
