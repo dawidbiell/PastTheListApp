@@ -45,6 +45,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.preview = new System.Windows.Forms.RichTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ItemsCount_lbl = new System.Windows.Forms.Label();
+            this.CopyToClipboard = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -69,7 +72,8 @@
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(241, 215);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.groupBox1.Size = new System.Drawing.Size(241, 184);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Settings";
@@ -81,6 +85,7 @@
             this.separator_tbx.Name = "separator_tbx";
             this.separator_tbx.Size = new System.Drawing.Size(141, 25);
             this.separator_tbx.TabIndex = 0;
+            this.separator_tbx.Text = ",";
             // 
             // label7
             // 
@@ -96,9 +101,9 @@
             // 
             this.inNewLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.inNewLine.ForeColor = System.Drawing.Color.Black;
-            this.inNewLine.Location = new System.Drawing.Point(6, 141);
+            this.inNewLine.Location = new System.Drawing.Point(6, 131);
             this.inNewLine.Name = "inNewLine";
-            this.inNewLine.Size = new System.Drawing.Size(216, 46);
+            this.inNewLine.Size = new System.Drawing.Size(216, 28);
             this.inNewLine.TabIndex = 50;
             this.inNewLine.Text = "Each item in new line";
             this.inNewLine.UseVisualStyleBackColor = true;
@@ -197,24 +202,61 @@
             // 
             // preview
             // 
-            this.preview.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.preview.Location = new System.Drawing.Point(9, 28);
+            this.preview.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.preview.Location = new System.Drawing.Point(7, 54);
             this.preview.Name = "preview";
-            this.preview.Size = new System.Drawing.Size(216, 207);
+            this.preview.Size = new System.Drawing.Size(216, 209);
             this.preview.TabIndex = 2;
             this.preview.Text = "";
             // 
             // groupBox2
             // 
             this.groupBox2.AutoSize = true;
+            this.groupBox2.Controls.Add(this.ItemsCount_lbl);
+            this.groupBox2.Controls.Add(this.CopyToClipboard);
+            this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.preview);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.Location = new System.Drawing.Point(12, 233);
+            this.groupBox2.Location = new System.Drawing.Point(12, 202);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(241, 263);
+            this.groupBox2.Size = new System.Drawing.Size(241, 319);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Preview";
+            // 
+            // ItemsCount_lbl
+            // 
+            this.ItemsCount_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ItemsCount_lbl.Location = new System.Drawing.Point(113, 25);
+            this.ItemsCount_lbl.Name = "ItemsCount_lbl";
+            this.ItemsCount_lbl.Size = new System.Drawing.Size(109, 26);
+            this.ItemsCount_lbl.TabIndex = 9;
+            this.ItemsCount_lbl.Text = "<number>";
+            this.ItemsCount_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // CopyToClipboard
+            // 
+            this.CopyToClipboard.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CopyToClipboard.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.CopyToClipboard.Location = new System.Drawing.Point(7, 267);
+            this.CopyToClipboard.Margin = new System.Windows.Forms.Padding(0);
+            this.CopyToClipboard.Name = "CopyToClipboard";
+            this.CopyToClipboard.Size = new System.Drawing.Size(215, 27);
+            this.CopyToClipboard.TabIndex = 8;
+            this.CopyToClipboard.Text = "Copy to clipboard";
+            this.CopyToClipboard.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.CopyToClipboard.UseVisualStyleBackColor = true;
+            this.CopyToClipboard.Click += new System.EventHandler(this.CopyToClipboard_Click);
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(7, 25);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(109, 26);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Number of items: ";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Main
             // 
@@ -252,5 +294,8 @@
         private System.Windows.Forms.Timer timer1;
         private TextBox separator_tbx;
         private Label label7;
+        private Button CopyToClipboard;
+        private Label label8;
+        private Label ItemsCount_lbl;
     }
 }

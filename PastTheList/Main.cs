@@ -31,12 +31,15 @@ namespace PastTheList
             itemSufix_tbx.DataBindings.Add("Text", _list, nameof(_list.ItemSufix), true, DataSourceUpdateMode.OnPropertyChanged);
             listSufix_tbx.DataBindings.Add("Text", _list, nameof(_list.ListSufix), true, DataSourceUpdateMode.OnPropertyChanged);
             inNewLine.DataBindings.Add("Checked", _list, nameof(_list.InNewLine), true, DataSourceUpdateMode.OnPropertyChanged);
-
+            ItemsCount_lbl.DataBindings.Add("Text", _list, nameof(_list.ItemsCount), true, DataSourceUpdateMode.OnPropertyChanged);
 
 
             preview.DataBindings.Add("Text", _list, nameof(_list.Preview), true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
-        
+        private void CopyToClipboard_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(preview.Text);
+        }
     }
 }
