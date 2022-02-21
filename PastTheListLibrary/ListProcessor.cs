@@ -49,7 +49,6 @@ namespace PastTheListLibrary
         {
             StringBuilder sb = new StringBuilder();
             string[] items = GetItems();
-            //items.Where(x => !String.IsNullOrEmpty(x)).ToArray();
 
             sb.Append(ListPrefix);
             sb.Append(ItemPrefix);
