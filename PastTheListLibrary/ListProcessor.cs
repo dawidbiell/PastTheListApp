@@ -41,7 +41,7 @@ namespace PastTheListLibrary
             cbText = Clipboard.GetText();
             cbDelimeters = new char[] { '\r', '\n', '\t' };
             items = cbText.Split(cbDelimeters, StringSplitOptions.RemoveEmptyEntries);
-
+            
             return items;
         }
 

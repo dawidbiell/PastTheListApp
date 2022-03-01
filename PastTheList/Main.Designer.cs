@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.separator_tbx = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -48,9 +49,16 @@
             this.ItemsCount_lbl = new System.Windows.Forms.Label();
             this.CopyToClipboard = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.item1Item2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.item1Item2ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.item1Item2ToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.item1Item2ToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.eachItemInNewLineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -258,18 +266,73 @@
             this.label8.Text = "Number of items: ";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.BalloonTipText = "Aplication is minimized";
+            this.notifyIcon1.BalloonTipTitle = "Paste the List";
+            this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "Paste the List";
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.item1Item2ToolStripMenuItem,
+            this.item1Item2ToolStripMenuItem2,
+            this.item1Item2ToolStripMenuItem1,
+            this.item1Item2ToolStripMenuItem3,
+            this.eachItemInNewLineToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(187, 136);
+            // 
+            // item1Item2ToolStripMenuItem
+            // 
+            this.item1Item2ToolStripMenuItem.Name = "item1Item2ToolStripMenuItem";
+            this.item1Item2ToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.item1Item2ToolStripMenuItem.Text = "\"Item_1\",\"Item_2\",\"...";
+            // 
+            // item1Item2ToolStripMenuItem1
+            // 
+            this.item1Item2ToolStripMenuItem1.Name = "item1Item2ToolStripMenuItem1";
+            this.item1Item2ToolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
+            this.item1Item2ToolStripMenuItem1.Text = "\'Item_1\',\'Item_2\',\'...";
+            // 
+            // item1Item2ToolStripMenuItem2
+            // 
+            this.item1Item2ToolStripMenuItem2.Name = "item1Item2ToolStripMenuItem2";
+            this.item1Item2ToolStripMenuItem2.Size = new System.Drawing.Size(186, 22);
+            this.item1Item2ToolStripMenuItem2.Text = "\"Item_1\";\"Item_2\";\"...";
+            // 
+            // item1Item2ToolStripMenuItem3
+            // 
+            this.item1Item2ToolStripMenuItem3.Name = "item1Item2ToolStripMenuItem3";
+            this.item1Item2ToolStripMenuItem3.Size = new System.Drawing.Size(186, 22);
+            this.item1Item2ToolStripMenuItem3.Text = "\'Item_1\';\'Item_2\';\'...";
+            // 
+            // eachItemInNewLineToolStripMenuItem
+            // 
+            this.eachItemInNewLineToolStripMenuItem.Name = "eachItemInNewLineToolStripMenuItem";
+            this.eachItemInNewLineToolStripMenuItem.RightToLeftAutoMirrorImage = true;
+            this.eachItemInNewLineToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.eachItemInNewLineToolStripMenuItem.Text = "Each Item in new line";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(265, 506);
+            this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.Text = "Past the list";
+            this.Resize += new System.EventHandler(this.Main_Resize);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,11 +354,17 @@
         private CheckBox inNewLine;
         private RichTextBox preview;
         private GroupBox groupBox2;
-        private System.Windows.Forms.Timer timer1;
         private TextBox separator_tbx;
         private Label label7;
         private Button CopyToClipboard;
         private Label label8;
         private Label ItemsCount_lbl;
+        private NotifyIcon notifyIcon1;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem item1Item2ToolStripMenuItem;
+        private ToolStripMenuItem item1Item2ToolStripMenuItem2;
+        private ToolStripMenuItem item1Item2ToolStripMenuItem1;
+        private ToolStripMenuItem item1Item2ToolStripMenuItem3;
+        private ToolStripMenuItem eachItemInNewLineToolStripMenuItem;
     }
 }

@@ -18,9 +18,7 @@ namespace PastTheList
         public Main()
         {
             InitializeComponent();
-
             BindControls();
-            
         }
 
         private void BindControls()
@@ -37,9 +35,6 @@ namespace PastTheList
             preview.DataBindings.Add("Text", _list, nameof(_list.Preview), true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
-        private void CopyToClipboard_Click(object sender, EventArgs e)
-        {
-            Clipboard.SetText(preview.Text);
-        }
+ 
     }
 }
