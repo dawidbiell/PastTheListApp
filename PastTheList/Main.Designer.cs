@@ -31,9 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.uniqueItems_chk = new System.Windows.Forms.CheckBox();
             this.separator_tbx = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.inNewLine = new System.Windows.Forms.CheckBox();
+            this.inNewLine_chk = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,9 +47,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.preview = new System.Windows.Forms.RichTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.ItemsCount_lbl = new System.Windows.Forms.Label();
-            this.CopyToClipboard = new System.Windows.Forms.Button();
+            this.uniqueItemsCount_lbl = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.itemsCount_lbl = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.CopyToClipboard = new System.Windows.Forms.Button();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.item1Item2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,6 +59,7 @@
             this.item1Item2ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.item1Item2ToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.eachItemInNewLineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.splitBySeparator_chk = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -64,9 +68,11 @@
             // groupBox1
             // 
             this.groupBox1.AutoSize = true;
+            this.groupBox1.Controls.Add(this.splitBySeparator_chk);
+            this.groupBox1.Controls.Add(this.uniqueItems_chk);
             this.groupBox1.Controls.Add(this.separator_tbx);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.inNewLine);
+            this.groupBox1.Controls.Add(this.inNewLine_chk);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label4);
@@ -81,10 +87,21 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.groupBox1.Size = new System.Drawing.Size(241, 184);
+            this.groupBox1.Size = new System.Drawing.Size(241, 228);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Settings";
+            // 
+            // uniqueItems_chk
+            // 
+            this.uniqueItems_chk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uniqueItems_chk.ForeColor = System.Drawing.Color.Black;
+            this.uniqueItems_chk.Location = new System.Drawing.Point(6, 153);
+            this.uniqueItems_chk.Name = "uniqueItems_chk";
+            this.uniqueItems_chk.Size = new System.Drawing.Size(216, 28);
+            this.uniqueItems_chk.TabIndex = 51;
+            this.uniqueItems_chk.Text = "Only unique items";
+            this.uniqueItems_chk.UseVisualStyleBackColor = true;
             // 
             // separator_tbx
             // 
@@ -105,16 +122,16 @@
             this.label7.Text = "Separator";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // inNewLine
+            // inNewLine_chk
             // 
-            this.inNewLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.inNewLine.ForeColor = System.Drawing.Color.Black;
-            this.inNewLine.Location = new System.Drawing.Point(6, 131);
-            this.inNewLine.Name = "inNewLine";
-            this.inNewLine.Size = new System.Drawing.Size(216, 28);
-            this.inNewLine.TabIndex = 50;
-            this.inNewLine.Text = "Each item in new line";
-            this.inNewLine.UseVisualStyleBackColor = true;
+            this.inNewLine_chk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.inNewLine_chk.ForeColor = System.Drawing.Color.Black;
+            this.inNewLine_chk.Location = new System.Drawing.Point(6, 131);
+            this.inNewLine_chk.Name = "inNewLine_chk";
+            this.inNewLine_chk.Size = new System.Drawing.Size(216, 28);
+            this.inNewLine_chk.TabIndex = 50;
+            this.inNewLine_chk.Text = "Each item in new line";
+            this.inNewLine_chk.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -211,50 +228,57 @@
             // preview
             // 
             this.preview.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.preview.Location = new System.Drawing.Point(7, 54);
+            this.preview.Location = new System.Drawing.Point(7, 80);
             this.preview.Name = "preview";
-            this.preview.Size = new System.Drawing.Size(216, 209);
+            this.preview.Size = new System.Drawing.Size(416, 206);
             this.preview.TabIndex = 2;
             this.preview.Text = "";
             // 
             // groupBox2
             // 
             this.groupBox2.AutoSize = true;
-            this.groupBox2.Controls.Add(this.ItemsCount_lbl);
-            this.groupBox2.Controls.Add(this.CopyToClipboard);
+            this.groupBox2.Controls.Add(this.uniqueItemsCount_lbl);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.itemsCount_lbl);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.preview);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.Location = new System.Drawing.Point(12, 202);
+            this.groupBox2.Location = new System.Drawing.Point(259, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(241, 319);
+            this.groupBox2.Size = new System.Drawing.Size(429, 341);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Preview";
             // 
-            // ItemsCount_lbl
+            // uniqueItemsCount_lbl
             // 
-            this.ItemsCount_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ItemsCount_lbl.Location = new System.Drawing.Point(113, 25);
-            this.ItemsCount_lbl.Name = "ItemsCount_lbl";
-            this.ItemsCount_lbl.Size = new System.Drawing.Size(109, 26);
-            this.ItemsCount_lbl.TabIndex = 9;
-            this.ItemsCount_lbl.Text = "<number>";
-            this.ItemsCount_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uniqueItemsCount_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.uniqueItemsCount_lbl.Location = new System.Drawing.Point(158, 51);
+            this.uniqueItemsCount_lbl.Name = "uniqueItemsCount_lbl";
+            this.uniqueItemsCount_lbl.Size = new System.Drawing.Size(64, 26);
+            this.uniqueItemsCount_lbl.TabIndex = 11;
+            this.uniqueItemsCount_lbl.Text = "<number>";
+            this.uniqueItemsCount_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // CopyToClipboard
+            // label10
             // 
-            this.CopyToClipboard.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CopyToClipboard.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.CopyToClipboard.Location = new System.Drawing.Point(7, 267);
-            this.CopyToClipboard.Margin = new System.Windows.Forms.Padding(0);
-            this.CopyToClipboard.Name = "CopyToClipboard";
-            this.CopyToClipboard.Size = new System.Drawing.Size(215, 27);
-            this.CopyToClipboard.TabIndex = 8;
-            this.CopyToClipboard.Text = "Copy to clipboard";
-            this.CopyToClipboard.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.CopyToClipboard.UseVisualStyleBackColor = true;
-            this.CopyToClipboard.Click += new System.EventHandler(this.CopyToClipboard_Click);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(7, 51);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(156, 26);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "Number of unique items: ";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // itemsCount_lbl
+            // 
+            this.itemsCount_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.itemsCount_lbl.Location = new System.Drawing.Point(114, 25);
+            this.itemsCount_lbl.Name = "itemsCount_lbl";
+            this.itemsCount_lbl.Size = new System.Drawing.Size(108, 26);
+            this.itemsCount_lbl.TabIndex = 9;
+            this.itemsCount_lbl.Text = "<number>";
+            this.itemsCount_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label8
             // 
@@ -265,6 +289,19 @@
             this.label8.TabIndex = 7;
             this.label8.Text = "Number of items: ";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // CopyToClipboard
+            // 
+            this.CopyToClipboard.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CopyToClipboard.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.CopyToClipboard.Location = new System.Drawing.Point(9, 252);
+            this.CopyToClipboard.Margin = new System.Windows.Forms.Padding(0);
+            this.CopyToClipboard.Name = "CopyToClipboard";
+            this.CopyToClipboard.Size = new System.Drawing.Size(244, 91);
+            this.CopyToClipboard.TabIndex = 8;
+            this.CopyToClipboard.Text = "Copy to clipboard";
+            this.CopyToClipboard.UseVisualStyleBackColor = true;
+            this.CopyToClipboard.Click += new System.EventHandler(this.CopyToClipboard_Click);
             // 
             // notifyIcon1
             // 
@@ -317,14 +354,26 @@
             this.eachItemInNewLineToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.eachItemInNewLineToolStripMenuItem.Text = "Each Item in new line";
             // 
+            // splitBySeparator_chk
+            // 
+            this.splitBySeparator_chk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.splitBySeparator_chk.ForeColor = System.Drawing.Color.Black;
+            this.splitBySeparator_chk.Location = new System.Drawing.Point(6, 175);
+            this.splitBySeparator_chk.Name = "splitBySeparator_chk";
+            this.splitBySeparator_chk.Size = new System.Drawing.Size(216, 28);
+            this.splitBySeparator_chk.TabIndex = 52;
+            this.splitBySeparator_chk.Text = "Split using separator";
+            this.splitBySeparator_chk.UseVisualStyleBackColor = true;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(265, 506);
+            this.ClientSize = new System.Drawing.Size(699, 352);
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.CopyToClipboard);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.Text = "Past the list";
@@ -352,14 +401,14 @@
         private TextBox itemPrefix_tbx;
         private TextBox itemSufix_tbx;
         private TextBox listPrefix_tbx;
-        private CheckBox inNewLine;
+        private CheckBox inNewLine_chk;
         private RichTextBox preview;
         private GroupBox groupBox2;
         private TextBox separator_tbx;
         private Label label7;
         private Button CopyToClipboard;
         private Label label8;
-        private Label ItemsCount_lbl;
+        private Label itemsCount_lbl;
         private NotifyIcon notifyIcon1;
         private ContextMenuStrip contextMenuStrip1;
         private ToolStripMenuItem item1Item2ToolStripMenuItem;
@@ -367,5 +416,9 @@
         private ToolStripMenuItem item1Item2ToolStripMenuItem1;
         private ToolStripMenuItem item1Item2ToolStripMenuItem3;
         private ToolStripMenuItem eachItemInNewLineToolStripMenuItem;
+        private Label uniqueItemsCount_lbl;
+        private Label label10;
+        private CheckBox uniqueItems_chk;
+        private CheckBox splitBySeparator_chk;
     }
 }
