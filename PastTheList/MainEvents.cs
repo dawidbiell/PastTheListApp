@@ -27,6 +27,11 @@ namespace PastTheList
                 notifyIcon1.Visible = true;
             }
         }
+
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            UnregisterClipboardViewer();
+        }
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             this.Show();

@@ -52,8 +52,8 @@
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.item1Item2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.item1Item2ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.item1Item2ToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.item1Item2ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.item1Item2ToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.eachItemInNewLineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
@@ -284,7 +284,7 @@
             this.item1Item2ToolStripMenuItem3,
             this.eachItemInNewLineToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(187, 136);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(187, 114);
             // 
             // item1Item2ToolStripMenuItem
             // 
@@ -292,17 +292,17 @@
             this.item1Item2ToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.item1Item2ToolStripMenuItem.Text = "\"Item_1\",\"Item_2\",\"...";
             // 
-            // item1Item2ToolStripMenuItem1
-            // 
-            this.item1Item2ToolStripMenuItem1.Name = "item1Item2ToolStripMenuItem1";
-            this.item1Item2ToolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
-            this.item1Item2ToolStripMenuItem1.Text = "\'Item_1\',\'Item_2\',\'...";
-            // 
             // item1Item2ToolStripMenuItem2
             // 
             this.item1Item2ToolStripMenuItem2.Name = "item1Item2ToolStripMenuItem2";
             this.item1Item2ToolStripMenuItem2.Size = new System.Drawing.Size(186, 22);
             this.item1Item2ToolStripMenuItem2.Text = "\"Item_1\";\"Item_2\";\"...";
+            // 
+            // item1Item2ToolStripMenuItem1
+            // 
+            this.item1Item2ToolStripMenuItem1.Name = "item1Item2ToolStripMenuItem1";
+            this.item1Item2ToolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
+            this.item1Item2ToolStripMenuItem1.Text = "\'Item_1\',\'Item_2\',\'...";
             // 
             // item1Item2ToolStripMenuItem3
             // 
@@ -328,6 +328,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.Text = "Past the list";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Resize += new System.EventHandler(this.Main_Resize);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
