@@ -17,7 +17,8 @@ namespace PastTheListLibrary
         public string ItemSufix { get; set; }
         public bool InNewLine { get; set; }
         public bool UniqueItems { get; set; }
-        public bool SplitByseparator { get; set; }
+        public bool SplitByDelimiter { get; set; }
+        public string DelimiterToSplit { get; set; }
 
         public int ItemsCount
         {
@@ -45,10 +46,10 @@ namespace PastTheListLibrary
 
             cbText = Clipboard.GetText();
             cbDelimeters = new string[] { "\r", "\n", "\t" };
-            if (SplitByseparator)
+            if (SplitByDelimiter)
             {
                 var splitters = cbDelimeters.ToList();
-                splitters.Add(Separator);
+                splitters.Add(DelimiterToSplit);
                 cbDelimeters = splitters.ToArray();
             }
 

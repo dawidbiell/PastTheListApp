@@ -35,7 +35,8 @@ namespace GUI_NET_Framework
 
             inNewLine_chk.DataBindings.Add("Checked", _list, nameof(_list.InNewLine), true, DataSourceUpdateMode.OnPropertyChanged);
             uniqueItems_chk.DataBindings.Add("Checked", _list, nameof(_list.UniqueItems), true, DataSourceUpdateMode.OnPropertyChanged);
-            splitBySeparator_chk.DataBindings.Add("Checked", _list, nameof(_list.SplitByseparator), true, DataSourceUpdateMode.OnPropertyChanged);
+            splitByDelimiter_chk.DataBindings.Add("Checked", _list, nameof(_list.SplitByDelimiter), true, DataSourceUpdateMode.OnPropertyChanged);
+            delimiter_tbx.DataBindings.Add("Text", _list, nameof(_list.DelimiterToSplit), true, DataSourceUpdateMode.OnPropertyChanged);
 
             itemsCount_lbl.DataBindings.Add("Text", _list, nameof(_list.ItemsCount), true, DataSourceUpdateMode.OnPropertyChanged);
             uniqueItemsCount_lbl.DataBindings.Add("Text", _list, nameof(_list.UniqueItemsCount), true, DataSourceUpdateMode.OnPropertyChanged);

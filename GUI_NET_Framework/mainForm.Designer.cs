@@ -33,7 +33,8 @@ namespace GUI_NET_Framework
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.splitBySeparator_chk = new System.Windows.Forms.CheckBox();
+            this.delimiter_tbx = new System.Windows.Forms.TextBox();
+            this.splitByDelimiter_chk = new System.Windows.Forms.CheckBox();
             this.uniqueItems_chk = new System.Windows.Forms.CheckBox();
             this.separator_tbx = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -70,7 +71,8 @@ namespace GUI_NET_Framework
             // groupBox1
             // 
             this.groupBox1.AutoSize = true;
-            this.groupBox1.Controls.Add(this.splitBySeparator_chk);
+            this.groupBox1.Controls.Add(this.delimiter_tbx);
+            this.groupBox1.Controls.Add(this.splitByDelimiter_chk);
             this.groupBox1.Controls.Add(this.uniqueItems_chk);
             this.groupBox1.Controls.Add(this.separator_tbx);
             this.groupBox1.Controls.Add(this.label7);
@@ -89,21 +91,29 @@ namespace GUI_NET_Framework
             this.groupBox1.Location = new System.Drawing.Point(10, 10);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.groupBox1.Size = new System.Drawing.Size(207, 231);
+            this.groupBox1.Size = new System.Drawing.Size(212, 231);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Settings";
             // 
-            // splitBySeparator_chk
+            // delimiter_tbx
             // 
-            this.splitBySeparator_chk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.splitBySeparator_chk.ForeColor = System.Drawing.Color.Black;
-            this.splitBySeparator_chk.Location = new System.Drawing.Point(5, 182);
-            this.splitBySeparator_chk.Name = "splitBySeparator_chk";
-            this.splitBySeparator_chk.Size = new System.Drawing.Size(185, 24);
-            this.splitBySeparator_chk.TabIndex = 52;
-            this.splitBySeparator_chk.Text = "Split using separator";
-            this.splitBySeparator_chk.UseVisualStyleBackColor = true;
+            this.delimiter_tbx.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.delimiter_tbx.Location = new System.Drawing.Point(146, 181);
+            this.delimiter_tbx.Name = "delimiter_tbx";
+            this.delimiter_tbx.Size = new System.Drawing.Size(57, 25);
+            this.delimiter_tbx.TabIndex = 12;
+            // 
+            // splitByDelimiter_chk
+            // 
+            this.splitByDelimiter_chk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.splitByDelimiter_chk.ForeColor = System.Drawing.Color.Black;
+            this.splitByDelimiter_chk.Location = new System.Drawing.Point(5, 182);
+            this.splitByDelimiter_chk.Name = "splitByDelimiter_chk";
+            this.splitByDelimiter_chk.Size = new System.Drawing.Size(150, 24);
+            this.splitByDelimiter_chk.TabIndex = 52;
+            this.splitByDelimiter_chk.Text = "Split using delimiter:";
+            this.splitByDelimiter_chk.UseVisualStyleBackColor = true;
             // 
             // uniqueItems_chk
             // 
@@ -119,9 +129,9 @@ namespace GUI_NET_Framework
             // separator_tbx
             // 
             this.separator_tbx.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.separator_tbx.Location = new System.Drawing.Point(69, 28);
+            this.separator_tbx.Location = new System.Drawing.Point(76, 24);
             this.separator_tbx.Name = "separator_tbx";
-            this.separator_tbx.Size = new System.Drawing.Size(121, 25);
+            this.separator_tbx.Size = new System.Drawing.Size(127, 25);
             this.separator_tbx.TabIndex = 0;
             this.separator_tbx.Text = ",";
             // 
@@ -130,9 +140,9 @@ namespace GUI_NET_Framework
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label7.Location = new System.Drawing.Point(5, 29);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 17);
+            this.label7.Size = new System.Drawing.Size(74, 15);
             this.label7.TabIndex = 11;
-            this.label7.Text = "Separator";
+            this.label7.Text = "Separator:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // inNewLine_chk
@@ -149,7 +159,7 @@ namespace GUI_NET_Framework
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.label5.Location = new System.Drawing.Point(117, 98);
+            this.label5.Location = new System.Drawing.Point(129, 98);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(34, 14);
             this.label5.TabIndex = 9;
@@ -159,7 +169,7 @@ namespace GUI_NET_Framework
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.label6.Location = new System.Drawing.Point(156, 98);
+            this.label6.Location = new System.Drawing.Point(168, 98);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(34, 14);
             this.label6.TabIndex = 8;
@@ -169,7 +179,7 @@ namespace GUI_NET_Framework
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.label4.Location = new System.Drawing.Point(117, 56);
+            this.label4.Location = new System.Drawing.Point(129, 56);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(74, 14);
             this.label4.TabIndex = 7;
@@ -189,7 +199,7 @@ namespace GUI_NET_Framework
             // listSufix_tbx
             // 
             this.listSufix_tbx.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.listSufix_tbx.Location = new System.Drawing.Point(156, 73);
+            this.listSufix_tbx.Location = new System.Drawing.Point(168, 73);
             this.listSufix_tbx.Name = "listSufix_tbx";
             this.listSufix_tbx.Size = new System.Drawing.Size(35, 25);
             this.listSufix_tbx.TabIndex = 40;
@@ -205,7 +215,7 @@ namespace GUI_NET_Framework
             // itemSufix_tbx
             // 
             this.itemSufix_tbx.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.itemSufix_tbx.Location = new System.Drawing.Point(117, 73);
+            this.itemSufix_tbx.Location = new System.Drawing.Point(129, 73);
             this.itemSufix_tbx.Name = "itemSufix_tbx";
             this.itemSufix_tbx.Size = new System.Drawing.Size(35, 25);
             this.itemSufix_tbx.TabIndex = 30;
@@ -243,7 +253,7 @@ namespace GUI_NET_Framework
             this.preview.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.preview.Location = new System.Drawing.Point(9, 73);
             this.preview.Name = "preview";
-            this.preview.Size = new System.Drawing.Size(357, 210);
+            this.preview.Size = new System.Drawing.Size(330, 210);
             this.preview.TabIndex = 2;
             this.preview.Text = "";
             // 
@@ -256,9 +266,9 @@ namespace GUI_NET_Framework
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.preview);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.groupBox2.Location = new System.Drawing.Point(222, 10);
+            this.groupBox2.Location = new System.Drawing.Point(231, 10);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(372, 311);
+            this.groupBox2.Size = new System.Drawing.Size(345, 313);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Preview";
@@ -266,7 +276,7 @@ namespace GUI_NET_Framework
             // uniqueItemsCount_lbl
             // 
             this.uniqueItemsCount_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.uniqueItemsCount_lbl.Location = new System.Drawing.Point(135, 44);
+            this.uniqueItemsCount_lbl.Location = new System.Drawing.Point(168, 44);
             this.uniqueItemsCount_lbl.Name = "uniqueItemsCount_lbl";
             this.uniqueItemsCount_lbl.Size = new System.Drawing.Size(78, 23);
             this.uniqueItemsCount_lbl.TabIndex = 11;
@@ -278,7 +288,7 @@ namespace GUI_NET_Framework
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label10.Location = new System.Drawing.Point(6, 44);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(134, 23);
+            this.label10.Size = new System.Drawing.Size(156, 23);
             this.label10.TabIndex = 10;
             this.label10.Text = "Number of unique items: ";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -286,7 +296,7 @@ namespace GUI_NET_Framework
             // itemsCount_lbl
             // 
             this.itemsCount_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.itemsCount_lbl.Location = new System.Drawing.Point(98, 22);
+            this.itemsCount_lbl.Location = new System.Drawing.Point(168, 21);
             this.itemsCount_lbl.Name = "itemsCount_lbl";
             this.itemsCount_lbl.Size = new System.Drawing.Size(93, 23);
             this.itemsCount_lbl.TabIndex = 9;
@@ -298,7 +308,7 @@ namespace GUI_NET_Framework
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label8.Location = new System.Drawing.Point(6, 22);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(93, 23);
+            this.label8.Size = new System.Drawing.Size(123, 23);
             this.label8.TabIndex = 7;
             this.label8.Text = "Number of items: ";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -307,10 +317,10 @@ namespace GUI_NET_Framework
             // 
             this.CopyToClipboard.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.CopyToClipboard.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.CopyToClipboard.Location = new System.Drawing.Point(8, 242);
+            this.CopyToClipboard.Location = new System.Drawing.Point(8, 244);
             this.CopyToClipboard.Margin = new System.Windows.Forms.Padding(0);
             this.CopyToClipboard.Name = "CopyToClipboard";
-            this.CopyToClipboard.Size = new System.Drawing.Size(209, 79);
+            this.CopyToClipboard.Size = new System.Drawing.Size(214, 79);
             this.CopyToClipboard.TabIndex = 8;
             this.CopyToClipboard.Text = "Copy to clipboard";
             this.CopyToClipboard.UseVisualStyleBackColor = true;
@@ -370,7 +380,7 @@ namespace GUI_NET_Framework
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(599, 325);
+            this.ClientSize = new System.Drawing.Size(579, 326);
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -419,7 +429,9 @@ namespace GUI_NET_Framework
         private Label uniqueItemsCount_lbl;
         private Label label10;
         private CheckBox uniqueItems_chk;
-        private CheckBox splitBySeparator_chk;
+        private CheckBox splitByDelimiter_chk;
         #endregion
+
+        private TextBox delimiter_tbx;
     }
 }
