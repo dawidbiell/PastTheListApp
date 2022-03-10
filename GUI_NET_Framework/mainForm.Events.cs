@@ -9,9 +9,28 @@ namespace GUI_NET_Framework
 {
     public partial class mainForm
     {
+        private void GetClipboardData()
+        {
+            preview.Text = _list.Preview;
+        }
+
+        private void CopyListToClipboard()
+        {
+            Clipboard.SetText(_list.Preview);
+        }
+        private void ClearInputs()
+        {
+            separator_tbx.Text = "";
+            listPrefix_tbx.Text = "";
+            itemPrefix_tbx.Text = "";
+            itemSufix_tbx.Text = "";
+            listSufix_tbx.Text = "";
+        }
+
         private void CopyToClipboard_Click(object sender, EventArgs e)
         {
             CopyListToClipboard();
+            ClearInputs();
         }
 
         // Form
@@ -44,19 +63,34 @@ namespace GUI_NET_Framework
         }
 
         // Menu strip
+        private void commaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            separator_tbx.Text = @",";
+            itemPrefix_tbx.Text = @"";
+            itemSufix_tbx.Text = @"";
+            if (this.WindowState == FormWindowState.Minimized) CopyListToClipboard();
+        }
+
+        private void semicolonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            separator_tbx.Text = @";";
+            itemPrefix_tbx.Text = @"";
+            itemSufix_tbx.Text = @"";
+            if (this.WindowState == FormWindowState.Minimized) CopyListToClipboard();
+        }
         private void commaApostrophToolStripMenuItem_Click(object sender, EventArgs e)
         {
             separator_tbx.Text = @",";
             itemPrefix_tbx.Text = @"'";
             itemSufix_tbx.Text = @"'";
-            CopyListToClipboard();
+            if (this.WindowState == FormWindowState.Minimized) CopyListToClipboard();
         }
         private void semicolonApostrophToolStripMenuItem_Click(object sender, EventArgs e)
         {
             separator_tbx.Text = @";";
             itemPrefix_tbx.Text = @"'";
             itemSufix_tbx.Text = @"'";
-            CopyListToClipboard();
+            if (this.WindowState == FormWindowState.Minimized) CopyListToClipboard();
         }
 
         private void commaQuotationMarksToolStripMenuItem_Click(object sender, EventArgs e)
@@ -64,7 +98,7 @@ namespace GUI_NET_Framework
             separator_tbx.Text = @",";
             itemPrefix_tbx.Text = "\"";
             itemSufix_tbx.Text = "\"";
-            CopyListToClipboard();
+            if (this.WindowState == FormWindowState.Minimized) CopyListToClipboard();
         }
 
         private void semicolonQuotationMarksToolStripMenuItem_Click(object sender, EventArgs e)
@@ -72,7 +106,23 @@ namespace GUI_NET_Framework
            separator_tbx.Text = @";";
            itemPrefix_tbx.Text = "\"";
            itemSufix_tbx.Text = "\"";
-            CopyListToClipboard();
+           if (this.WindowState == FormWindowState.Minimized) CopyListToClipboard();
+        }
+
+        private void commaSqareToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            separator_tbx.Text = @",";
+            itemPrefix_tbx.Text = "[";
+            itemSufix_tbx.Text = "]";
+            if (this.WindowState == FormWindowState.Minimized) CopyListToClipboard();
+        }
+
+        private void semicolonSquareBracketToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            separator_tbx.Text = @";";
+            itemPrefix_tbx.Text = "[";
+            itemSufix_tbx.Text = "]";
+            if (this.WindowState == FormWindowState.Minimized) CopyListToClipboard();
         }
 
         private void eachItemInNewLineToolStripMenuItem_Click(object sender, EventArgs e)
@@ -86,5 +136,10 @@ namespace GUI_NET_Framework
             uniqueItems_chk.Checked = !_list.UniqueItems;
             onlyUniqueItemsToolStripMenuItem.Checked= _list.UniqueItems;
         }
+        private void clearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
     }
 }

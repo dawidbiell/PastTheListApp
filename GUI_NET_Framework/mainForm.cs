@@ -23,17 +23,15 @@ namespace GUI_NET_Framework
             InitializeComponent();
             RegisterClipboardViewer();
             BindControls();
+            InitializeMenuStrip();
         }
 
-        private void CopyListToClipboard()
-        {
-            Clipboard.SetText(_list.Preview);
-        }
+        
 
         private void InitializeMenuStrip()
         {
             eachItemInNewLineToolStripMenuItem.Checked = _list.InNewLine;
-            onlyUniqueItemsToolStripMenuItem.Checked=_
+            onlyUniqueItemsToolStripMenuItem.Checked = _list.UniqueItems;
         }
 
         private void BindControls()
@@ -110,15 +108,7 @@ namespace GUI_NET_Framework
 
         }
 
-        private void GetClipboardData()
-        {
-            preview.Text = _list.Preview;
-        }
-
-
-
-
-
+        
 
         #endregion
 

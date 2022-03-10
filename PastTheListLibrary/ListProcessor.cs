@@ -38,7 +38,7 @@ namespace PastTheListLibrary
             return InNewLine ? Environment.NewLine : String.Empty;
         }
 
-        private string[] GetItems()
+        public string[] GetItems()
         {
             string[] items;
             string cbText;
