@@ -25,24 +25,40 @@ namespace GUI_NET_Framework
             BindControls();
         }
 
+        private void CopyListToClipboard()
+        {
+            Clipboard.SetText(_list.Preview);
+        }
+
+        private void InitializeMenuStrip()
+        {
+            eachItemInNewLineToolStripMenuItem.Checked = _list.InNewLine;
+            onlyUniqueItemsToolStripMenuItem.Checked=_
+        }
+
         private void BindControls()
         {
+            // characters
             separator_tbx.DataBindings.Add("Text", _list, nameof(_list.Separator), true, DataSourceUpdateMode.OnPropertyChanged);
             listPrefix_tbx.DataBindings.Add("Text", _list, nameof(_list.ListPrefix), true, DataSourceUpdateMode.OnPropertyChanged);
             itemPrefix_tbx.DataBindings.Add("Text", _list, nameof(_list.ItemPrefix), true, DataSourceUpdateMode.OnPropertyChanged);
             itemSufix_tbx.DataBindings.Add("Text", _list, nameof(_list.ItemSufix), true, DataSourceUpdateMode.OnPropertyChanged);
             listSufix_tbx.DataBindings.Add("Text", _list, nameof(_list.ListSufix), true, DataSourceUpdateMode.OnPropertyChanged);
 
+            // options
             inNewLine_chk.DataBindings.Add("Checked", _list, nameof(_list.InNewLine), true, DataSourceUpdateMode.OnPropertyChanged);
             uniqueItems_chk.DataBindings.Add("Checked", _list, nameof(_list.UniqueItems), true, DataSourceUpdateMode.OnPropertyChanged);
             splitByDelimiter_chk.DataBindings.Add("Checked", _list, nameof(_list.SplitByDelimiter), true, DataSourceUpdateMode.OnPropertyChanged);
             delimiter_tbx.DataBindings.Add("Text", _list, nameof(_list.DelimiterToSplit), true, DataSourceUpdateMode.OnPropertyChanged);
 
+
+            // labels
             itemsCount_lbl.DataBindings.Add("Text", _list, nameof(_list.ItemsCount), true, DataSourceUpdateMode.OnPropertyChanged);
             uniqueItemsCount_lbl.DataBindings.Add("Text", _list, nameof(_list.UniqueItemsCount), true, DataSourceUpdateMode.OnPropertyChanged);
 
-
+            // previev
             preview.DataBindings.Add("Text", _list, nameof(_list.Preview), true, DataSourceUpdateMode.OnPropertyChanged);
+
         }
 
         #region Clipboard Monitor
@@ -100,6 +116,12 @@ namespace GUI_NET_Framework
         }
 
 
+
+
+
+
         #endregion
+
+        
     }
 }

@@ -32,6 +32,7 @@ namespace GUI_NET_Framework
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.delimiter_tbx = new System.Windows.Forms.TextBox();
             this.splitByDelimiter_chk = new System.Windows.Forms.CheckBox();
@@ -58,11 +59,13 @@ namespace GUI_NET_Framework
             this.CopyToClipboard = new System.Windows.Forms.Button();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.item1Item2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.item1Item2ToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.item1Item2ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.item1Item2ToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.commaapostrophToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.semicolonapostrophToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.commaquotationMarksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.semicolonquotationMarksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eachItemInNewLineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.onlyUniqueItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -331,50 +334,70 @@ namespace GUI_NET_Framework
             this.notifyIcon1.BalloonTipText = "Aplication is minimized";
             this.notifyIcon1.BalloonTipTitle = "Paste the List";
             this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
             this.notifyIcon1.Text = "Paste the List";
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.item1Item2ToolStripMenuItem,
-            this.item1Item2ToolStripMenuItem2,
-            this.item1Item2ToolStripMenuItem1,
-            this.item1Item2ToolStripMenuItem3,
-            this.eachItemInNewLineToolStripMenuItem});
+            this.commaapostrophToolStripMenuItem,
+            this.semicolonapostrophToolStripMenuItem,
+            this.commaquotationMarksToolStripMenuItem,
+            this.semicolonquotationMarksToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.eachItemInNewLineToolStripMenuItem,
+            this.onlyUniqueItemsToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(187, 114);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(257, 142);
             // 
-            // item1Item2ToolStripMenuItem
+            // commaapostrophToolStripMenuItem
             // 
-            this.item1Item2ToolStripMenuItem.Name = "item1Item2ToolStripMenuItem";
-            this.item1Item2ToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.item1Item2ToolStripMenuItem.Text = "\"Item_1\",\"Item_2\",\"...";
+            this.commaapostrophToolStripMenuItem.Name = "commaapostrophToolStripMenuItem";
+            this.commaapostrophToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.commaapostrophToolStripMenuItem.Text = "\'comma\',\'apostroph\',\'...";
+            this.commaapostrophToolStripMenuItem.Click += new System.EventHandler(this.commaApostrophToolStripMenuItem_Click);
             // 
-            // item1Item2ToolStripMenuItem2
+            // semicolonapostrophToolStripMenuItem
             // 
-            this.item1Item2ToolStripMenuItem2.Name = "item1Item2ToolStripMenuItem2";
-            this.item1Item2ToolStripMenuItem2.Size = new System.Drawing.Size(186, 22);
-            this.item1Item2ToolStripMenuItem2.Text = "\"Item_1\";\"Item_2\";\"...";
+            this.semicolonapostrophToolStripMenuItem.Name = "semicolonapostrophToolStripMenuItem";
+            this.semicolonapostrophToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.semicolonapostrophToolStripMenuItem.Text = "\'semicolon\';\'apostroph\';\'...";
+            this.semicolonapostrophToolStripMenuItem.Click += new System.EventHandler(this.semicolonApostrophToolStripMenuItem_Click);
             // 
-            // item1Item2ToolStripMenuItem1
+            // commaquotationMarksToolStripMenuItem
             // 
-            this.item1Item2ToolStripMenuItem1.Name = "item1Item2ToolStripMenuItem1";
-            this.item1Item2ToolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
-            this.item1Item2ToolStripMenuItem1.Text = "\'Item_1\',\'Item_2\',\'...";
+            this.commaquotationMarksToolStripMenuItem.Name = "commaquotationMarksToolStripMenuItem";
+            this.commaquotationMarksToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.commaquotationMarksToolStripMenuItem.Text = "\"comma\",\"quotation marks\",\"...";
+            this.commaquotationMarksToolStripMenuItem.Click += new System.EventHandler(this.commaQuotationMarksToolStripMenuItem_Click);
             // 
-            // item1Item2ToolStripMenuItem3
+            // semicolonquotationMarksToolStripMenuItem
             // 
-            this.item1Item2ToolStripMenuItem3.Name = "item1Item2ToolStripMenuItem3";
-            this.item1Item2ToolStripMenuItem3.Size = new System.Drawing.Size(186, 22);
-            this.item1Item2ToolStripMenuItem3.Text = "\'Item_1\';\'Item_2\';\'...";
+            this.semicolonquotationMarksToolStripMenuItem.Name = "semicolonquotationMarksToolStripMenuItem";
+            this.semicolonquotationMarksToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.semicolonquotationMarksToolStripMenuItem.Text = "\"semicolon\";\"quotation marks\";\"...";
+            this.semicolonquotationMarksToolStripMenuItem.Click += new System.EventHandler(this.semicolonQuotationMarksToolStripMenuItem_Click);
             // 
             // eachItemInNewLineToolStripMenuItem
             // 
             this.eachItemInNewLineToolStripMenuItem.Name = "eachItemInNewLineToolStripMenuItem";
             this.eachItemInNewLineToolStripMenuItem.RightToLeftAutoMirrorImage = true;
-            this.eachItemInNewLineToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.eachItemInNewLineToolStripMenuItem.Text = "Each Item in new line";
+            this.eachItemInNewLineToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.eachItemInNewLineToolStripMenuItem.Text = "Each item in new line";
+            this.eachItemInNewLineToolStripMenuItem.Click += new System.EventHandler(this.eachItemInNewLineToolStripMenuItem_Click);
+            // 
+            // onlyUniqueItemsToolStripMenuItem
+            // 
+            this.onlyUniqueItemsToolStripMenuItem.Name = "onlyUniqueItemsToolStripMenuItem";
+            this.onlyUniqueItemsToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.onlyUniqueItemsToolStripMenuItem.Text = "Only unique items";
+            this.onlyUniqueItemsToolStripMenuItem.Click += new System.EventHandler(this.onlyUniqueItemsToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(253, 6);
             // 
             // mainForm
             // 
@@ -385,6 +408,7 @@ namespace GUI_NET_Framework
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.CopyToClipboard);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "mainForm";
             this.Text = "Past the list";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainForm_FormClosing);
@@ -421,10 +445,6 @@ namespace GUI_NET_Framework
         private Label itemsCount_lbl;
         private NotifyIcon notifyIcon1;
         private ContextMenuStrip contextMenuStrip1;
-        private ToolStripMenuItem item1Item2ToolStripMenuItem;
-        private ToolStripMenuItem item1Item2ToolStripMenuItem2;
-        private ToolStripMenuItem item1Item2ToolStripMenuItem1;
-        private ToolStripMenuItem item1Item2ToolStripMenuItem3;
         private ToolStripMenuItem eachItemInNewLineToolStripMenuItem;
         private Label uniqueItemsCount_lbl;
         private Label label10;
@@ -433,5 +453,11 @@ namespace GUI_NET_Framework
         #endregion
 
         private TextBox delimiter_tbx;
+        private ToolStripMenuItem onlyUniqueItemsToolStripMenuItem;
+        private ToolStripMenuItem commaapostrophToolStripMenuItem;
+        private ToolStripMenuItem semicolonapostrophToolStripMenuItem;
+        private ToolStripMenuItem commaquotationMarksToolStripMenuItem;
+        private ToolStripMenuItem semicolonquotationMarksToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator1;
     }
 }

@@ -9,31 +9,12 @@ namespace GUI_NET_Framework
 {
     public partial class mainForm
     {
-        //private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //private void CopyToClipboard_Click(object sender, EventArgs e)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //private void mainForm_Resize(object sender, EventArgs e)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //private void mainForm_FormClosing(object sender, FormClosingEventArgs e)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
         private void CopyToClipboard_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(preview.Text);
+            CopyListToClipboard();
         }
 
+        // Form
         private void mainForm_Resize(object sender, EventArgs e)
         {
             if (this.WindowState == FormWindowState.Minimized)
@@ -48,17 +29,62 @@ namespace GUI_NET_Framework
                 notifyIcon1.Visible = true;
             }
         }
-
+        
         private void mainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             UnregisterClipboardViewer();
         }
+
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             this.Show();
             notifyIcon1.Visible = false;
             WindowState = FormWindowState.Normal;
 
+        }
+
+        // Menu strip
+        private void commaApostrophToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            separator_tbx.Text = @",";
+            itemPrefix_tbx.Text = @"'";
+            itemSufix_tbx.Text = @"'";
+            CopyListToClipboard();
+        }
+        private void semicolonApostrophToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            separator_tbx.Text = @";";
+            itemPrefix_tbx.Text = @"'";
+            itemSufix_tbx.Text = @"'";
+            CopyListToClipboard();
+        }
+
+        private void commaQuotationMarksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            separator_tbx.Text = @",";
+            itemPrefix_tbx.Text = "\"";
+            itemSufix_tbx.Text = "\"";
+            CopyListToClipboard();
+        }
+
+        private void semicolonQuotationMarksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           separator_tbx.Text = @";";
+           itemPrefix_tbx.Text = "\"";
+           itemSufix_tbx.Text = "\"";
+            CopyListToClipboard();
+        }
+
+        private void eachItemInNewLineToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            inNewLine_chk.Checked = !_list.InNewLine;
+            eachItemInNewLineToolStripMenuItem.Checked = _list.InNewLine;
+        }
+
+        private void onlyUniqueItemsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            uniqueItems_chk.Checked = !_list.UniqueItems;
+            onlyUniqueItemsToolStripMenuItem.Checked= _list.UniqueItems;
         }
     }
 }
