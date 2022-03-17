@@ -386,10 +386,10 @@ namespace GUI_NET_Framework
             // 
             this.CopyToClipboard.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.CopyToClipboard.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.CopyToClipboard.Location = new System.Drawing.Point(5, 281);
+            this.CopyToClipboard.Location = new System.Drawing.Point(5, 295);
             this.CopyToClipboard.Margin = new System.Windows.Forms.Padding(0);
             this.CopyToClipboard.Name = "CopyToClipboard";
-            this.CopyToClipboard.Size = new System.Drawing.Size(212, 88);
+            this.CopyToClipboard.Size = new System.Drawing.Size(212, 60);
             this.CopyToClipboard.TabIndex = 8;
             this.CopyToClipboard.Text = "Copy to clipboard";
             this.CopyToClipboard.UseVisualStyleBackColor = true;
