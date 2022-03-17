@@ -108,10 +108,17 @@ namespace GUI_NET_Framework
 
         }
 
-        
+
+
 
         #endregion
 
-        
+
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutAppBox aboutAppBox = new AboutAppBox();
+            aboutAppBox.ShowDialog();
+        }
     }
 }

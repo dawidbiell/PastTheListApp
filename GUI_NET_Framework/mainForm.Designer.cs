@@ -72,9 +72,16 @@ namespace GUI_NET_Framework
             this.onlyUniqueItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.toolStripContainer1.ContentPanel.SuspendLayout();
+            this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
+            this.toolStripContainer1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -97,7 +104,7 @@ namespace GUI_NET_Framework
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(10, 10);
+            this.groupBox1.Location = new System.Drawing.Point(5, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.groupBox1.Size = new System.Drawing.Size(212, 231);
@@ -261,8 +268,9 @@ namespace GUI_NET_Framework
             // 
             this.preview.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.preview.Location = new System.Drawing.Point(9, 73);
+            this.preview.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.preview.Name = "preview";
-            this.preview.Size = new System.Drawing.Size(330, 210);
+            this.preview.Size = new System.Drawing.Size(330, 229);
             this.preview.TabIndex = 2;
             this.preview.Text = "";
             // 
@@ -275,9 +283,11 @@ namespace GUI_NET_Framework
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.preview);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.groupBox2.Location = new System.Drawing.Point(231, 10);
+            this.groupBox2.Location = new System.Drawing.Point(223, 3);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(345, 313);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.groupBox2.Size = new System.Drawing.Size(345, 324);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Preview";
@@ -326,10 +336,10 @@ namespace GUI_NET_Framework
             // 
             this.CopyToClipboard.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.CopyToClipboard.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.CopyToClipboard.Location = new System.Drawing.Point(8, 244);
+            this.CopyToClipboard.Location = new System.Drawing.Point(3, 259);
             this.CopyToClipboard.Margin = new System.Windows.Forms.Padding(0);
             this.CopyToClipboard.Name = "CopyToClipboard";
-            this.CopyToClipboard.Size = new System.Drawing.Size(214, 79);
+            this.CopyToClipboard.Size = new System.Drawing.Size(214, 68);
             this.CopyToClipboard.TabIndex = 8;
             this.CopyToClipboard.Text = "Copy to clipboard";
             this.CopyToClipboard.UseVisualStyleBackColor = true;
@@ -451,16 +461,54 @@ namespace GUI_NET_Framework
             this.clearToolStripMenuItem.Text = "Clear";
             this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
             // 
+            // toolStripContainer1
+            // 
+            // 
+            // toolStripContainer1.ContentPanel
+            // 
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.groupBox1);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.CopyToClipboard);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.groupBox2);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(579, 356);
+            this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStripContainer1.LeftToolStripPanelVisible = false;
+            this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
+            this.toolStripContainer1.Name = "toolStripContainer1";
+            this.toolStripContainer1.RightToolStripPanelVisible = false;
+            this.toolStripContainer1.Size = new System.Drawing.Size(579, 380);
+            this.toolStripContainer1.TabIndex = 53;
+            this.toolStripContainer1.Text = "toolStripContainer1";
+            // 
+            // toolStripContainer1.TopToolStripPanel
+            // 
+            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.menuStrip1);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(579, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(579, 326);
+            this.ClientSize = new System.Drawing.Size(579, 380);
             this.ContextMenuStrip = this.contextMenuStrip1;
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.CopyToClipboard);
+            this.Controls.Add(this.toolStripContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "mainForm";
             this.Text = "Past the list";
@@ -470,8 +518,15 @@ namespace GUI_NET_Framework
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
+            this.toolStripContainer1.ContentPanel.ResumeLayout(false);
+            this.toolStripContainer1.ContentPanel.PerformLayout();
+            this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
+            this.toolStripContainer1.TopToolStripPanel.PerformLayout();
+            this.toolStripContainer1.ResumeLayout(false);
+            this.toolStripContainer1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -517,5 +572,8 @@ namespace GUI_NET_Framework
         private ToolStripMenuItem semicolonsquareBracketToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripMenuItem clearToolStripMenuItem;
+        private ToolStripContainer toolStripContainer1;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
