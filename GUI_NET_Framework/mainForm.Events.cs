@@ -9,6 +9,8 @@ namespace GUI_NET_Framework
 {
     public partial class mainForm
     {
+
+//METHODS
         private void GetClipboardData()
         {
             preview.Text = _list.Preview;
@@ -18,6 +20,7 @@ namespace GUI_NET_Framework
         {
             Clipboard.SetText(_list.Preview);
         }
+
         private void ClearInputs()
         {
             separator_tbx.Text = "";
@@ -27,6 +30,7 @@ namespace GUI_NET_Framework
             listSufix_tbx.Text = "";
         }
 
+// EVENTS
         private void CopyToClipboard_Click(object sender, EventArgs e)
         {
             CopyListToClipboard();
@@ -63,6 +67,12 @@ namespace GUI_NET_Framework
         }
 
         // Menu strip
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutAppBox aboutAppBox = new AboutAppBox();
+            aboutAppBox.ShowDialog();
+        }
+
         private void commaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             separator_tbx.Text = @",";
@@ -138,7 +148,7 @@ namespace GUI_NET_Framework
         }
         private void clearToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            ClearInputs();
         }
 
     }

@@ -34,6 +34,10 @@ namespace GUI_NET_Framework
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.sortDesc_rdo = new System.Windows.Forms.RadioButton();
+            this.sortAsc_rdo = new System.Windows.Forms.RadioButton();
+            this.sortNo_rdo = new System.Windows.Forms.RadioButton();
+            this.label9 = new System.Windows.Forms.Label();
             this.delimiter_tbx = new System.Windows.Forms.TextBox();
             this.splitByDelimiter_chk = new System.Windows.Forms.CheckBox();
             this.uniqueItems_chk = new System.Windows.Forms.CheckBox();
@@ -86,7 +90,10 @@ namespace GUI_NET_Framework
             // 
             // groupBox1
             // 
-            this.groupBox1.AutoSize = true;
+            this.groupBox1.Controls.Add(this.sortDesc_rdo);
+            this.groupBox1.Controls.Add(this.sortAsc_rdo);
+            this.groupBox1.Controls.Add(this.sortNo_rdo);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.delimiter_tbx);
             this.groupBox1.Controls.Add(this.splitByDelimiter_chk);
             this.groupBox1.Controls.Add(this.uniqueItems_chk);
@@ -107,10 +114,57 @@ namespace GUI_NET_Framework
             this.groupBox1.Location = new System.Drawing.Point(5, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.groupBox1.Size = new System.Drawing.Size(212, 231);
+            this.groupBox1.Size = new System.Drawing.Size(212, 275);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Settings";
+            // 
+            // sortDesc_rdo
+            // 
+            this.sortDesc_rdo.AutoSize = true;
+            this.sortDesc_rdo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.sortDesc_rdo.Location = new System.Drawing.Point(108, 247);
+            this.sortDesc_rdo.Name = "sortDesc_rdo";
+            this.sortDesc_rdo.Size = new System.Drawing.Size(57, 20);
+            this.sortDesc_rdo.TabIndex = 57;
+            this.sortDesc_rdo.Text = "Desc";
+            this.sortDesc_rdo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.sortDesc_rdo.UseVisualStyleBackColor = true;
+            // 
+            // sortAsc_rdo
+            // 
+            this.sortAsc_rdo.AutoSize = true;
+            this.sortAsc_rdo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.sortAsc_rdo.Location = new System.Drawing.Point(54, 247);
+            this.sortAsc_rdo.Name = "sortAsc_rdo";
+            this.sortAsc_rdo.Size = new System.Drawing.Size(48, 20);
+            this.sortAsc_rdo.TabIndex = 55;
+            this.sortAsc_rdo.Text = "Asc";
+            this.sortAsc_rdo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.sortAsc_rdo.UseVisualStyleBackColor = true;
+            // 
+            // sortNo_rdo
+            // 
+            this.sortNo_rdo.AutoSize = true;
+            this.sortNo_rdo.Checked = true;
+            this.sortNo_rdo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.sortNo_rdo.Location = new System.Drawing.Point(5, 247);
+            this.sortNo_rdo.Name = "sortNo_rdo";
+            this.sortNo_rdo.Size = new System.Drawing.Size(43, 20);
+            this.sortNo_rdo.TabIndex = 54;
+            this.sortNo_rdo.TabStop = true;
+            this.sortNo_rdo.Text = "No";
+            this.sortNo_rdo.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label9.Location = new System.Drawing.Point(2, 229);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(74, 15);
+            this.label9.TabIndex = 53;
+            this.label9.Text = "Sort:";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // delimiter_tbx
             // 
@@ -268,15 +322,13 @@ namespace GUI_NET_Framework
             // 
             this.preview.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.preview.Location = new System.Drawing.Point(9, 73);
-            this.preview.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.preview.Name = "preview";
-            this.preview.Size = new System.Drawing.Size(330, 229);
+            this.preview.Size = new System.Drawing.Size(330, 286);
             this.preview.TabIndex = 2;
             this.preview.Text = "";
             // 
             // groupBox2
             // 
-            this.groupBox2.AutoSize = true;
             this.groupBox2.Controls.Add(this.uniqueItemsCount_lbl);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.itemsCount_lbl);
@@ -284,10 +336,8 @@ namespace GUI_NET_Framework
             this.groupBox2.Controls.Add(this.preview);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.groupBox2.Location = new System.Drawing.Point(223, 3);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.groupBox2.Size = new System.Drawing.Size(345, 324);
+            this.groupBox2.Size = new System.Drawing.Size(345, 366);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Preview";
@@ -334,12 +384,12 @@ namespace GUI_NET_Framework
             // 
             // CopyToClipboard
             // 
-            this.CopyToClipboard.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.CopyToClipboard.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.CopyToClipboard.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.CopyToClipboard.Location = new System.Drawing.Point(3, 259);
+            this.CopyToClipboard.Location = new System.Drawing.Point(5, 281);
             this.CopyToClipboard.Margin = new System.Windows.Forms.Padding(0);
             this.CopyToClipboard.Name = "CopyToClipboard";
-            this.CopyToClipboard.Size = new System.Drawing.Size(214, 68);
+            this.CopyToClipboard.Size = new System.Drawing.Size(212, 88);
             this.CopyToClipboard.TabIndex = 8;
             this.CopyToClipboard.Text = "Copy to clipboard";
             this.CopyToClipboard.UseVisualStyleBackColor = true;
@@ -463,19 +513,20 @@ namespace GUI_NET_Framework
             // 
             // toolStripContainer1
             // 
+            this.toolStripContainer1.BottomToolStripPanelVisible = false;
             // 
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.groupBox1);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.CopyToClipboard);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.groupBox2);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(579, 356);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(579, 374);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.LeftToolStripPanelVisible = false;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
             this.toolStripContainer1.RightToolStripPanelVisible = false;
-            this.toolStripContainer1.Size = new System.Drawing.Size(579, 380);
+            this.toolStripContainer1.Size = new System.Drawing.Size(579, 398);
             this.toolStripContainer1.TabIndex = 53;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -490,6 +541,7 @@ namespace GUI_NET_Framework
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.menuStrip1.Size = new System.Drawing.Size(579, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
@@ -506,7 +558,7 @@ namespace GUI_NET_Framework
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(579, 380);
+            this.ClientSize = new System.Drawing.Size(579, 398);
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.toolStripContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -519,7 +571,6 @@ namespace GUI_NET_Framework
             this.groupBox2.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
-            this.toolStripContainer1.ContentPanel.PerformLayout();
             this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
@@ -575,5 +626,9 @@ namespace GUI_NET_Framework
         private ToolStripContainer toolStripContainer1;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem aboutToolStripMenuItem;
+        private RadioButton sortDesc_rdo;
+        private RadioButton sortAsc_rdo;
+        private RadioButton sortNo_rdo;
+        private Label label9;
     }
 }

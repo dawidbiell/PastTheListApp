@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="ClipboardMonitor\Shell32.cs" />
     <Compile Include="ClipboardMonitor\User32.cs" />
+    <Compile Include="Enums.cs" />
     <Compile Include="ListProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

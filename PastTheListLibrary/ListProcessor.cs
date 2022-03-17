@@ -19,6 +19,7 @@ namespace PastTheListLibrary
         public bool UniqueItems { get; set; }
         public bool SplitByDelimiter { get; set; }
         public string DelimiterToSplit { get; set; }
+        public SortType SortOrder { get; set; }
 
         public int ItemsCount
         {
@@ -58,7 +59,21 @@ namespace PastTheListLibrary
             if (UniqueItems)
             {
                 items=items.Distinct().ToArray();
-            } 
+            }
+
+            switch (SortOrder)
+            {
+                case SortType.No:
+                    break;
+                case SortType.Ascending:
+                    Array.Sort(items);
+                    break;
+                case SortType.Descending:
+                    Array.Reverse(items);
+                    break;
+                default:
+                    break;
+            }
 
             return items;
         }

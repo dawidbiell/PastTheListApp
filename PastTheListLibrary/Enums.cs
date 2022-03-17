@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace GUI_NET_Framework
+namespace PastTheListLibrary
 {
-    public static class FormMethods
+    public enum SortType
     {
-       
+        No,
+        Ascending,
+        Descending,
     }
 }

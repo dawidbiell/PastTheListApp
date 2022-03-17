@@ -26,7 +26,7 @@ namespace GUI_NET_Framework
             InitializeMenuStrip();
         }
 
-        
+
 
         private void InitializeMenuStrip()
         {
@@ -49,12 +49,27 @@ namespace GUI_NET_Framework
             splitByDelimiter_chk.DataBindings.Add("Checked", _list, nameof(_list.SplitByDelimiter), true, DataSourceUpdateMode.OnPropertyChanged);
             delimiter_tbx.DataBindings.Add("Text", _list, nameof(_list.DelimiterToSplit), true, DataSourceUpdateMode.OnPropertyChanged);
 
+            // sort
+            var noBinding = new Binding("Checked", _list, nameof(_list.SortOrder), true, DataSourceUpdateMode.OnPropertyChanged);
+            noBinding.Format +=  (sender, e) => e.Value = (SortType)e.Value == SortType.No;
+            noBinding.Parse += (sender, e) => { if ((bool)e.Value) e.Value = SortType.No; };
+            sortNo_rdo.DataBindings.Add(noBinding);
+
+            var ascBinding = new Binding("Checked", _list, nameof(_list.SortOrder),true, DataSourceUpdateMode.OnPropertyChanged);
+            ascBinding.Format += (sender, e) => e.Value = (SortType)e.Value == SortType.Ascending;
+            ascBinding.Parse += (sender, e) => { if ((bool)e.Value) e.Value = SortType.Ascending; };
+            sortAsc_rdo.DataBindings.Add(ascBinding);
+
+            var descBinding = new Binding("Checked", _list, nameof(_list.SortOrder), true, DataSourceUpdateMode.OnPropertyChanged);
+            descBinding.Format += (sender, e) => e.Value = (SortType)e.Value == SortType.Descending;
+            descBinding.Parse += (sender, e) => { if ((bool)e.Value) e.Value = SortType.Descending; };
+            sortDesc_rdo.DataBindings.Add(descBinding);
 
             // labels
             itemsCount_lbl.DataBindings.Add("Text", _list, nameof(_list.ItemsCount), true, DataSourceUpdateMode.OnPropertyChanged);
             uniqueItemsCount_lbl.DataBindings.Add("Text", _list, nameof(_list.UniqueItemsCount), true, DataSourceUpdateMode.OnPropertyChanged);
 
-            // previev
+            // preview
             preview.DataBindings.Add("Text", _list, nameof(_list.Preview), true, DataSourceUpdateMode.OnPropertyChanged);
 
         }
@@ -115,10 +130,6 @@ namespace GUI_NET_Framework
 
 
 
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AboutAppBox aboutAppBox = new AboutAppBox();
-            aboutAppBox.ShowDialog();
-        }
+
     }
 }
