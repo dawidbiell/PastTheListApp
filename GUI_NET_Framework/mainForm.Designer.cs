@@ -79,6 +79,7 @@ namespace GUI_NET_Framework
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -419,9 +420,10 @@ namespace GUI_NET_Framework
             this.eachItemInNewLineToolStripMenuItem,
             this.onlyUniqueItemsToolStripMenuItem,
             this.toolStripSeparator2,
-            this.clearToolStripMenuItem});
+            this.clearToolStripMenuItem,
+            this.exitToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(257, 258);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(257, 302);
             // 
             // commaToolStripMenuItem
             // 
@@ -553,6 +555,13 @@ namespace GUI_NET_Framework
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -630,5 +639,6 @@ namespace GUI_NET_Framework
         private RadioButton sortAsc_rdo;
         private RadioButton sortNo_rdo;
         private Label label9;
+        private ToolStripMenuItem exitToolStripMenuItem;
     }
 }

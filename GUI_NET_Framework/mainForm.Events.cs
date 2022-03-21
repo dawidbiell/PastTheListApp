@@ -44,7 +44,6 @@ namespace GUI_NET_Framework
             {
                 this.Hide();
                 notifyIcon1.Visible = true;
-                notifyIcon1.ShowBalloonTip(1000);
             }
 
             if (this.WindowState == FormWindowState.Normal)
@@ -63,8 +62,8 @@ namespace GUI_NET_Framework
             this.Show();
             notifyIcon1.Visible = false;
             WindowState = FormWindowState.Normal;
-
         }
+
 
         // Menu strip
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -150,6 +149,9 @@ namespace GUI_NET_Framework
         {
             ClearInputs();
         }
-
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
